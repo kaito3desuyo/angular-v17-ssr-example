@@ -7,7 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:angular-v17-ssr-example": "node dist/angular-v17-ssr-example/server/server.mjs"
+    "serve:ssr:angular-v17-ssr-example": "node dist/angular-v17-ssr-example/server/server.mjs",
+    "serverless": "TS_NODE_PROJECT=tsconfig.sls.json serverless",
+    "deploy": "npm run build -- --configuration serverless && npm run serverless -- deploy",
+    "remove": "npm run serverless -- remove"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +24,7 @@
     "@angular/platform-server": "^17.0.0",
     "@angular/router": "^17.0.0",
     "@angular/ssr": "^17.0.7",
+    "@h4ad/serverless-adapter": "^3.1.0",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -30,6 +34,7 @@
     "@angular-devkit/build-angular": "^17.0.7",
     "@angular/cli": "^17.0.7",
     "@angular/compiler-cli": "^17.0.0",
+    "@serverless/typescript": "^3.38.0",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
@@ -39,6 +44,9 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "serverless": "^3.38.0",
+    "serverless-deployment-bucket": "^1.6.0",
+    "ts-node": "^9.1.1",
     "typescript": "~5.2.2"
   }
 }

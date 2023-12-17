@@ -59,6 +59,11 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "serverless": {
+              "ssr": {
+                "entry": "handler.ts"
+              }
             }
           },
           "defaultConfiguration": "production"
